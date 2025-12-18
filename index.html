@@ -6,101 +6,117 @@
   <title>High‑Conversion Website Design | Grow Your Business Online</title>
   <meta name="description" content="We design high‑converting, mobile‑first websites that turn visitors into paying customers. Get a free strategy call today." />
   <style>
+    :root {
+      --bg-dark: #0b0b0b;
+      --panel-dark: #141414;
+      --primary-orange: #f97316;
+      --primary-orange-dark: #ea580c;
+      --accent-white: #ffffff;
+      --text-muted: #d1d5db;
+    }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      background: var(--bg-dark);
+      color: var(--accent-white);
       line-height: 1.6;
     }
     header {
-      padding: 80px 20px;
+      padding: 90px 20px 80px;
       text-align: center;
-      background: linear-gradient(135deg, #2563eb, #1e40af);
+      background: radial-gradient(circle at top, #1f1f1f, #000000);
+    }
+    .logo {
+      max-width: 320px;
+      margin-bottom: 30px;
     }
     header h1 {
       font-size: 2.8rem;
       margin-bottom: 20px;
-      color: #ffffff;
+      color: var(--accent-white);
     }
     header p {
       max-width: 720px;
-      margin: 0 auto 30px;
+      margin: 0 auto 35px;
       font-size: 1.2rem;
-      color: #e0e7ff;
+      color: var(--text-muted);
     }
     .cta-btn {
       display: inline-block;
-      background: #22c55e;
-      color: #052e16;
-      padding: 15px 32px;
+      background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+      color: #1a0a00;
+      padding: 16px 36px;
       font-size: 1.1rem;
       font-weight: bold;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(249,115,22,0.35);
     }
     section {
-      padding: 70px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
     }
     .usp {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
     }
     .card {
-      background: #020617;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      background: var(--panel-dark);
+      padding: 34px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      border-top: 3px solid var(--primary-orange);
     }
     .card h3 {
-      color: #60a5fa;
-      margin-bottom: 10px;
+      color: var(--primary-orange);
+      margin-bottom: 12px;
     }
     .card p {
-      color: #cbd5f5;
+      color: var(--text-muted);
     }
     .cta-section {
-      background: #020617;
+      background: linear-gradient(135deg, #111111, #000000);
       text-align: center;
-      border-radius: 16px;
-      padding: 60px 20px;
+      border-radius: 18px;
+      padding: 70px 20px;
+      border: 1px solid #1f1f1f;
     }
     .cta-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      color: #ffffff;
+      font-size: 2.3rem;
+      margin-bottom: 18px;
+      color: var(--accent-white);
     }
     .cta-section p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #cbd5f5;
+      max-width: 620px;
+      margin: 0 auto 35px;
+      color: var(--text-muted);
       font-size: 1.1rem;
     }
     footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 35px 20px;
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: #9ca3af;
+      border-top: 1px solid #1f1f1f;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Websites Built to Convert — Not Just Look Good</h1>
+  <img src="launchpadweb-logo.png" alt="LaunchPad Web – Website Design & Development" class="logo" />
+  <h1>Websites That Launch Your Business Forward</h1>
   <p>
-    We design fast, modern, mobile‑first websites that turn visitors into leads and customers.
-    No templates. No guesswork. Just proven design built to grow your business.
+    LaunchPad Web designs high‑performance, mobile‑first websites that turn visitors into leads and customers.
+    Built for speed, clarity, and real business growth.
   </p>
-  <a href="#contact" class="cta-btn">Get a Free Strategy Call</a>
+  <a href="#contact" class="cta-btn">Launch My Website</a>
 </header>
 
 <section>
@@ -138,8 +154,9 @@
 </section>
 
 <footer>
-  © 2025 Your Web Design Business. All rights reserved.
+  © 2025 LaunchPad Web. All rights reserved.
 </footer>
 
 </body>
-</html>
+  </html>
+                                     
