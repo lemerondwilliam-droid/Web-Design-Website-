@@ -5,63 +5,128 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LaunchPad Web | High-Converting Websites</title>
 
+<!-- Google Fonts for modern feel -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --bg:#0b0b0b;
-  --panel:#141414;
+  --panel:#1a1a1a;
   --primary:#f97316;
+  --secondary:#ea580c;
   --text:#ffffff;
   --muted:#cbd5e1;
+  --accent:#fbbf24;
+  --shadow:rgba(0,0,0,0.6);
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;}
 body{
-  margin:0;font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.6;
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  scroll-behavior:smooth;
 }
 nav{
-  background:#000;padding:18px 30px;
-  display:flex;justify-content:space-between;align-items:center;
+  background:#000;
+  padding:18px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   border-bottom:1px solid #1f1f1f;
 }
-nav a{color:var(--text);text-decoration:none;margin-left:22px;font-weight:600}
-nav a:hover{color:var(--primary)}
-.cta-btn{
-  background:linear-gradient(135deg,var(--primary),#ea580c);
-  padding:14px 28px;border-radius:10px;
-  color:#1a0a00;font-weight:bold;text-decoration:none;
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:22px;
+  font-weight:600;
+  transition:color 0.3s;
 }
+nav a:hover{color:var(--primary);}
+.cta-btn{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  padding:14px 32px;
+  border-radius:16px;
+  color:#1a0a00;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(249,115,22,0.5);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.cta-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(249,115,22,0.6);
+}
+
 header{
-  text-align:center;padding:100px 20px;
+  text-align:center;
+  padding:140px 20px;
   background:radial-gradient(circle at top,#1f1f1f,#000);
 }
 .logo-wrap{
-  display:inline-block;background:#111;padding:22px 26px;
-  border-radius:18px;margin-bottom:35px;
-  box-shadow:0 0 40px rgba(249,115,22,.25);
+  display:inline-block;
+  background:#111;
+  padding:24px 28px;
+  border-radius:24px;
+  margin-bottom:40px;
+  box-shadow:0 0 60px rgba(249,115,22,0.5);
 }
-.logo{max-width:220px}
-section{max-width:1100px;margin:auto;padding:80px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
-.card,.testimonial{
-  background:var(--panel);padding:36px;border-radius:16px;
-  box-shadow:0 14px 30px rgba(0,0,0,.6)
+.logo{max-width:280px;height:auto;}
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:100px 20px;
 }
-h1{font-size:3rem}
-h2{text-align:center;font-size:2.4rem}
-p{color:var(--muted)}
-footer{text-align:center;padding:40px;color:#9ca3af;border-top:1px solid #1f1f1f}
+h1{font-size:3.6rem;margin-bottom:20px;font-weight:700;}
+h2{text-align:center;font-size:2.8rem;margin-bottom:60px;font-weight:600;}
+p{color:var(--muted);font-size:1.15rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
+.card, .testimonial{
+  background:var(--panel);
+  padding:36px;
+  border-radius:20px;
+  box-shadow:0 20px 40px var(--shadow);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.card:hover, .testimonial:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 50px var(--shadow);
+}
+.card h3{font-size:1.5rem;margin-bottom:15px;color:#fff;}
+.testimonial p{font-style:italic;font-size:1.05rem;margin-bottom:12px;}
+footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f;font-size:0.95rem;}
+
+/* Star ratings using inline SVG */
+.stars {
+  display:flex;
+  justify-content:center;
+  margin-bottom:12px;
+}
+.stars svg{
+  width:24px;
+  height:24px;
+  margin:0 2px;
+  fill:var(--accent);
+}
+section.cta-section{
+  text-align:center;
+  background:linear-gradient(135deg,#111,#1a1a1a);
+  padding:100px 20px;
+  border-radius:30px;
+  margin:60px 20px;
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <strong>LaunchPad Web</strong>
+  <strong style="font-size:1.4rem;">LaunchPad Web</strong>
   <div>
     <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
     <a href="case-studies.html">Case Studies</a>
-    <a href="contact.html" class="cta-btn">Free Strategy Call</a>
   </div>
 </nav>
 
@@ -69,36 +134,67 @@ footer{text-align:center;padding:40px;color:#9ca3af;border-top:1px solid #1f1f1f
   <div class="logo-wrap">
     <img src="launchpadweb-logo.png" class="logo" alt="LaunchPad Web">
   </div>
-  <h1>Websites Built to Generate Leads & Sales</h1>
-  <p>We design conversion-focused websites that turn visitors into real customers — not just traffic.</p>
-  <a href="contact.html" class="cta-btn">🚀 Get My Free Strategy Call</a>
+  <h1>Websites That Convert Visitors Into Customers</h1>
+  <p>High-converting websites designed to generate real leads and sales — not just clicks.</p>
+  <a href="contact.html" class="cta-btn">🚀 Claim Your Free Strategy Call</a>
 </header>
 
 <section>
   <h2>Why Businesses Choose LaunchPad Web</h2>
   <div class="grid">
-    <div class="card"><h3>Conversion Strategy</h3><p>Every page is designed to drive action — calls, forms, and bookings.</p></div>
-    <div class="card"><h3>Fast & Mobile-First</h3><p>Optimized for speed, SEO, and mobile users.</p></div>
-    <div class="card"><h3>Built to Scale</h3><p>Perfect for ads, SEO, and future growth.</p></div>
+    <div class="card"><h3>Conversion Strategy</h3><p>Every page is crafted to drive actions — calls, form submissions, and bookings.</p></div>
+    <div class="card"><h3>Fast & Mobile-First</h3><p>Optimized for speed, mobile, and SEO for maximum results.</p></div>
+    <div class="card"><h3>Built to Scale</h3><p>Designed to grow with your business and advertising campaigns.</p></div>
   </div>
 </section>
 
 <section>
   <h2>Client Results</h2>
   <div class="grid">
-    <div class="testimonial"><p>“We went from barely any leads to consistent calls every week.”</p><strong>— Local Contractor</strong></div>
-    <div class="testimonial"><p>“Our website finally works like a sales tool.”</p><strong>— Small Business Owner</strong></div>
-    <div class="testimonial"><p>“Worth every dollar — it paid for itself fast.”</p><strong>— Entrepreneur</strong></div>
+    <div class="testimonial">
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+      </div>
+      <p>“We went from barely any leads to consistent calls every week.”</p>
+      <strong>— Local Contractor</strong>
+    </div>
+    <div class="testimonial">
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+      </div>
+      <p>“Our website finally works like a true sales tool.”</p>
+      <strong>— Small Business Owner</strong>
+    </div>
+    <div class="testimonial">
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+      </div>
+      <p>“Worth every dollar — it paid for itself fast.”</p>
+      <strong>— Entrepreneur</strong>
+    </div>
   </div>
 </section>
 
-<section style="text-align:center">
-  <h2>Ready to Turn Your Website Into a Sales Machine?</h2>
-  <p>Book a free strategy call and get a clear plan to increase leads.</p>
+<section class="cta-section">
+  <h2>Ready to Turn Your Website Into a Lead-Generating Machine?</h2>
+  <p>Book a free strategy call today and get a clear plan to increase leads and sales.</p>
   <a href="contact.html" class="cta-btn">🔥 Book My Free Call</a>
 </section>
 
 <footer>© 2025 LaunchPad Web</footer>
+
 </body>
     </html>
-    
+      
