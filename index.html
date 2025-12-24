@@ -6,146 +6,99 @@
 <title>LaunchPad Web | High-Converting Websites</title>
 
 <style>
-/* ===== GLOBAL STYLES ===== */
 :root {
   --bg:#0b0b0b;
   --panel:#141414;
   --primary:#f97316;
-  --primary-dark:#ea580c;
   --text:#ffffff;
-  --muted:#d1d5db;
+  --muted:#cbd5e1;
 }
 *{box-sizing:border-box}
 body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  margin:0;font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
 }
-a{text-decoration:none;color:inherit}
-
-/* ===== NAV ===== */
 nav{
-  position:sticky; top:0; z-index:100;
-  background:#000;
+  background:#000;padding:18px 30px;
+  display:flex;justify-content:space-between;align-items:center;
   border-bottom:1px solid #1f1f1f;
 }
-.nav-inner{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 20px;
+nav a{color:var(--text);text-decoration:none;margin-left:22px;font-weight:600}
+nav a:hover{color:var(--primary)}
+.cta-btn{
+  background:linear-gradient(135deg,var(--primary),#ea580c);
+  padding:14px 28px;border-radius:10px;
+  color:#1a0a00;font-weight:bold;text-decoration:none;
 }
-.nav-links a{
-  margin-left:22px;
-  font-size:.95rem;
-  color:var(--muted);
-}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{
-  margin-left:22px;
-  padding:10px 18px;
-  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-  color:#1a0a00;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-/* ===== HERO ===== */
 header{
-  text-align:center;
-  padding:100px 20px;
+  text-align:center;padding:100px 20px;
   background:radial-gradient(circle at top,#1f1f1f,#000);
 }
-header h1{
-  font-size:3rem;
-  max-width:900px;
-  margin:auto;
+.logo-wrap{
+  display:inline-block;background:#111;padding:22px 26px;
+  border-radius:18px;margin-bottom:35px;
+  box-shadow:0 0 40px rgba(249,115,22,.25);
 }
-header p{
-  max-width:720px;
-  margin:30px auto 40px;
-  color:var(--muted);
-  font-size:1.2rem;
+.logo{max-width:220px}
+section{max-width:1100px;margin:auto;padding:80px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.card,.testimonial{
+  background:var(--panel);padding:36px;border-radius:16px;
+  box-shadow:0 14px 30px rgba(0,0,0,.6)
 }
-.cta{
-  padding:18px 40px;
-  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-  color:#1a0a00;
-  font-weight:bold;
-  border-radius:12px;
-}
-
-/* ===== SECTIONS ===== */
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:90px 20px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.card{
-  background:var(--panel);
-  padding:34px;
-  border-radius:16px;
-  border-top:4px solid var(--primary);
-}
-footer{
-  text-align:center;
-  padding:40px;
-  border-top:1px solid #1f1f1f;
-  color:#9ca3af;
-}
+h1{font-size:3rem}
+h2{text-align:center;font-size:2.4rem}
+p{color:var(--muted)}
+footer{text-align:center;padding:40px;color:#9ca3af;border-top:1px solid #1f1f1f}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="nav-inner">
-    <strong>LaunchPad Web</strong>
-    <div class="nav-links">
-      <a href="services.html">Services</a>
-      <a href="process.html">How It Works</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta">Free Strategy Call</a>
-    </div>
+  <strong>LaunchPad Web</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="contact.html" class="cta-btn">Free Strategy Call</a>
   </div>
 </nav>
 
 <header>
-  <h1>Websites Built to Generate Leads — Not Just Look Good</h1>
-  <p>
-    We design high-converting websites that turn visitors into
-    calls, bookings, and paying customers.
-  </p>
-  <a href="contact.html" class="cta">🚀 Get My Free Strategy Call</a>
+  <div class="logo-wrap">
+    <img src="launchpadweb-logo.png" class="logo" alt="LaunchPad Web">
+  </div>
+  <h1>Websites Built to Generate Leads & Sales</h1>
+  <p>We design conversion-focused websites that turn visitors into real customers — not just traffic.</p>
+  <a href="contact.html" class="cta-btn">🚀 Get My Free Strategy Call</a>
 </header>
 
 <section>
+  <h2>Why Businesses Choose LaunchPad Web</h2>
   <div class="grid">
-    <div class="card">
-      <h3>Conversion-Focused Design</h3>
-      <p>Every element guides visitors toward action.</p>
-    </div>
-    <div class="card">
-      <h3>Fast & Mobile-First</h3>
-      <p>Optimized for speed, SEO, and mobile users.</p>
-    </div>
-    <div class="card">
-      <h3>Built to Scale</h3>
-      <p>Perfect for ads, SEO, and growth.</p>
-    </div>
+    <div class="card"><h3>Conversion Strategy</h3><p>Every page is designed to drive action — calls, forms, and bookings.</p></div>
+    <div class="card"><h3>Fast & Mobile-First</h3><p>Optimized for speed, SEO, and mobile users.</p></div>
+    <div class="card"><h3>Built to Scale</h3><p>Perfect for ads, SEO, and future growth.</p></div>
   </div>
+</section>
+
+<section>
+  <h2>Client Results</h2>
+  <div class="grid">
+    <div class="testimonial"><p>“We went from barely any leads to consistent calls every week.”</p><strong>— Local Contractor</strong></div>
+    <div class="testimonial"><p>“Our website finally works like a sales tool.”</p><strong>— Small Business Owner</strong></div>
+    <div class="testimonial"><p>“Worth every dollar — it paid for itself fast.”</p><strong>— Entrepreneur</strong></div>
+  </div>
+</section>
+
+<section style="text-align:center">
+  <h2>Ready to Turn Your Website Into a Sales Machine?</h2>
+  <p>Book a free strategy call and get a clear plan to increase leads.</p>
+  <a href="contact.html" class="cta-btn">🔥 Book My Free Call</a>
 </section>
 
 <footer>© 2025 LaunchPad Web</footer>
 </body>
-  </html>
-  
+    </html>
+    
