@@ -232,7 +232,7 @@ footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f
   position:fixed;
   bottom:100px;
   right:30px;
-  width:320px;
+  width:350px;
   max-width:90%;
   background:var(--panel);
   border-radius:20px;
@@ -248,6 +248,15 @@ footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f
   font-weight:700;
   color:#1a0a00;
   font-size:1rem;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+#chat-window header img{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#fff;
 }
 #chat-window .messages {
   padding:16px;
@@ -255,6 +264,18 @@ footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f
   max-height:300px;
   overflow-y:auto;
 }
+#chat-window .messages p{
+  margin:8px 0;
+  line-height:1.4;
+}
+#chat-window .messages .bot-message{
+  color:#fbbf24;
+}
+#chat-window .messages .typing{
+  font-style:italic;
+  opacity:0.7;
+}
+
 #chat-window .input-area {
   display:flex;
   border-top:1px solid #333;
@@ -294,7 +315,6 @@ footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f
 </nav>
 
 <header>
-  <!-- Animated shapes -->
   <div class="header-shape"></div>
   <div class="header-shape"></div>
   <div class="header-shape"></div>
@@ -346,12 +366,12 @@ footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f
 
 <footer>© 2025 LaunchPad Web</footer>
 
-<!-- Chatbot Widget -->
+<!-- Chatbot -->
 <div id="chatbot">💬</div>
 <div id="chat-window">
-  <header>Chat with LaunchPad</header>
+  <header><img src="https://cdn-icons-png.flaticon.com/512/4712/4712184.png" alt="Agent Avatar">LaunchPad AI</header>
   <div class="messages" id="chat-messages">
-    <p>Hi! How can I help you today?</p>
+    <p class="bot-message">Hi! How can I help you today?</p>
   </div>
   <div class="input-area">
     <input type="text" id="chat-input" placeholder="Type your message...">
@@ -389,25 +409,37 @@ chatSend.addEventListener('click', async () => {
   chatInput.value = '';
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
+  const typing = document.createElement('p');
+  typing.textContent = "Agent is typing...";
+  typing.classList.add('typing');
+  chatMessages.appendChild(typing);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
   try {
     const res = await fetch('YOUR_SERVER_ENDPOINT/chat', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
       body: JSON.stringify({message: userMessage})
     });
     const data = await res.json();
 
+    chatMessages.removeChild(typing);
     const pBot = document.createElement('p');
     pBot.textContent = "Agent: " + data.reply;
-    pBot.style.color = '#fbbf24';
+    pBot.classList.add('bot-message');
     chatMessages.appendChild(pBot);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   } catch(err){
+    chatMessages.removeChild(typing);
+    const pError = document.createElement('p');
+    pError.textContent = "Agent: Sorry, something went wrong.";
+    pError.classList.add('bot-message');
+    chatMessages.appendChild(pError);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
     console.error(err);
   }
 });
 </script>
-
 </body>
   </html>
   
