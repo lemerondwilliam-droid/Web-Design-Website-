@@ -34,9 +34,21 @@
       background: radial-gradient(circle at top, #1f1f1f, #000000);
     }
 
+    .logo-wrap {
+      display: inline-block;
+      background: #111;
+      padding: 20px 26px;
+      border-radius: 18px;
+      margin-bottom: 40px;
+      box-shadow:
+        0 0 0 1px #1f1f1f,
+        0 12px 40px rgba(0,0,0,0.8),
+        0 0 40px rgba(249,115,22,0.25);
+    }
+
     .logo {
-      max-width: 300px;
-      margin-bottom: 35px;
+      max-width: 220px;
+      display: block;
     }
 
     header h1 {
@@ -97,7 +109,7 @@
     }
 
     /* ---------- CARDS ---------- */
-    .usp {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 32px;
@@ -119,6 +131,25 @@
 
     .card p {
       color: var(--text-muted);
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonial {
+      background: #111;
+      padding: 34px;
+      border-radius: 16px;
+      border: 1px solid #1f1f1f;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+
+    .testimonial p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .testimonial strong {
+      color: var(--text-main);
     }
 
     /* ---------- CTA ---------- */
@@ -154,73 +185,14 @@
 
 <body>
 
-<!-- HERO -->
 <header>
-  <img src="launchpadweb-logo.png" alt="LaunchPad Web" class="logo" />
+  <div class="logo-wrap">
+    <img src="launchpadweb-logo.png" alt="LaunchPad Web" class="logo" />
+  </div>
 
   <h1>Your Website Should Bring You Customers — Not Just Look Nice</h1>
 
   <p>
-    Most websites fail because they aren’t built to convert. At <strong>LaunchPad Web</strong>,
-    we design high-performance websites that turn visitors into
-    calls, bookings, and paying customers — consistently.
-  </p>
-
-  <a href="#contact" class="cta-btn">🚀 Get My Free Strategy Call</a>
-  <div class="subtext">No pressure • No obligation • Real actionable advice</div>
-</header>
-
-<!-- WHY -->
-<section>
-  <h2>Why Our Websites Outperform the Competition</h2>
-  <p class="section-desc">
-    This isn’t about flashy design. It’s about building a website that works like
-    a 24/7 sales machine for your business.
-  </p>
-
-  <div class="usp">
-    <div class="card">
-      <h3>Built for Conversions</h3>
-      <p>
-        Every element is intentional — from headlines to buttons — guiding visitors
-        toward one clear action that grows your business.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Fast, Mobile-First & SEO-Ready</h3>
-      <p>
-        Speed and mobile usability directly impact leads. We build clean,
-        lightning-fast websites optimized for Google and real users.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Designed to Scale</h3>
-      <p>
-        Whether you’re running ads, focusing on SEO, or expanding later,
-        your website will be ready — no rebuild required.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta-section" id="contact">
-  <h2>Let’s Turn Your Website Into a Sales Asset</h2>
-  <p>
-    If your website isn’t generating consistent leads, it’s costing you money every day.
-    Book a free strategy call and we’ll show you exactly what’s holding your site back
-    — and how to fix it.
-  </p>
-
-  <a href="mailto:your@email.com" class="cta-btn">🔥 Book My Free Strategy Call</a>
-</section>
-
-<footer>
-  © 2025 LaunchPad Web • High-Conversion Website Design
-</footer>
-
-</body>
-  </html>
+    We design conversion-focused websites that turn visitors into
+    calls,
   
