@@ -2,48 +2,236 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Case Studies | LaunchPad Web</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="index.html">
+<title>LaunchPad Web | Case Studies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0b0b0b;
+  --panel:#1a1a1a;
+  --primary:#f97316;
+  --secondary:#ea580c;
+  --text:#ffffff;
+  --muted:#cbd5e1;
+  --accent:#fbbf24;
+  --shadow:rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  scroll-behavior:smooth;
+}
+
+nav{
+  background:#000;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #1f1f1f;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:999;
+  transition:padding 0.3s, box-shadow 0.3s;
+}
+
+nav.shrink{
+  padding:10px 40px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:22px;
+  font-weight:600;
+  transition:color 0.3s;
+}
+
+nav a:hover{color:var(--primary);}
+
+header{
+  text-align:center;
+  padding:140px 20px 100px;
+  background:radial-gradient(circle at top,#1f1f1f,#000);
+}
+
+.logo-wrap{
+  display:inline-block;
+  background:#111;
+  padding:24px 28px;
+  border-radius:24px;
+  margin-bottom:40px;
+  box-shadow:0 0 60px rgba(249,115,22,0.5);
+}
+
+.logo{max-width:260px;height:auto;}
+
+h1{font-size:3.2rem;margin-bottom:20px;font-weight:700;}
+h2{text-align:center;font-size:2.6rem;margin-bottom:60px;font-weight:600;}
+p{color:var(--muted);font-size:1.15rem;}
+section{max-width:1200px;margin:auto;padding:100px 20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
+
+.case-study{
+  background:var(--panel);
+  padding:36px;
+  border-radius:20px;
+  box-shadow:0 20px 40px var(--shadow);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.case-study:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 50px var(--shadow);
+}
+
+.case-study h3{font-size:1.5rem;margin-bottom:15px;color:#fff;}
+.case-study .results{font-weight:700;margin-top:12px;color:var(--primary);}
+
+.stars {
+  display:flex;
+  justify-content:flex-start;
+  margin-bottom:12px;
+}
+.stars svg{
+  width:22px;
+  height:22px;
+  margin-right:4px;
+  fill:var(--accent);
+}
+
+.cta-btn{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  padding:14px 32px;
+  border-radius:16px;
+  color:#1a0a00;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(249,115,22,0.5);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.cta-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(249,115,22,0.6);
+}
+
+section.cta-section{
+  text-align:center;
+  background:linear-gradient(135deg,#111,#1a1a1a);
+  padding:100px 20px;
+  border-radius:30px;
+  margin:60px 20px;
+}
+
+footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f;font-size:0.95rem;}
+
+/* Responsive nav */
+@media(max-width:768px){
+  nav{
+    flex-direction:column;
+    padding:15px 20px;
+  }
+  nav.shrink{
+    padding:8px 20px;
+  }
+  nav div{
+    margin-top:10px;
+  }
+  nav a{
+    margin-left:0;
+    margin-right:15px;
+  }
+}
+</style>
 </head>
 <body>
 
-<!-- SAME NAV -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">LaunchPad Web</a>
-    <div class="nav-links">
-      <a href="services.html">Services</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta">Free Strategy Call</a>
-    </div>
+<nav id="navbar">
+  <strong style="font-size:1.4rem;">LaunchPad Web</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="case-studies.html">Case Studies</a>
   </div>
 </nav>
 
-<section>
-  <h2>Case Study: Local Service Business</h2>
-  <p class="section-desc">
-    How we turned a stagnant website into a lead-generating machine.
-  </p>
-
-  <div class="card">
-    <h3>The Problem</h3>
-    <p>No calls, slow site, unclear messaging.</p>
-
-    <h3>The Solution</h3>
-    <p>Rebuilt site with conversion-focused layout and clear CTA.</p>
-
-    <h3>The Results</h3>
-    <p>Consistent inbound calls within 30 days.</p>
+<header>
+  <div class="logo-wrap">
+    <img src="launchpadweb-logo.png" class="logo" alt="LaunchPad Web">
   </div>
+  <h1>Our Proven Results</h1>
+  <p>See how LaunchPad Web has helped businesses generate more leads, sales, and revenue with high-converting websites.</p>
+</header>
 
-  <div style="text-align:center;margin-top:50px">
-    <a href="contact.html" class="cta-btn">Get Similar Results</a>
+<section>
+  <h2>Featured Case Studies</h2>
+  <div class="grid">
+    <div class="case-study">
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+      </div>
+      <h3>Local Contractor Website Overhaul</h3>
+      <p>Redesigned website for a local contractor to capture more leads from online searches.</p>
+      <p class="results">+350% increase in weekly leads, 200% more calls</p>
+    </div>
+
+    <div class="case-study">
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+      </div>
+      <h3>E-commerce Store Launch</h3>
+      <p>Developed a Shopify store for a boutique shop, optimizing for mobile and paid ads.</p>
+      <p class="results">+500% online sales in first 3 months, ROAS 4.2x</p>
+    </div>
+
+    <div class="case-study">
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
+      </div>
+      <h3>Service-Based Business Lead Boost</h3>
+      <p>Implemented a conversion-focused site for a service provider targeting local searches.</p>
+      <p class="results">+420% form submissions, doubled client calls</p>
+    </div>
   </div>
 </section>
 
+<section class="cta-section">
+  <h2>Ready to See Similar Results for Your Business?</h2>
+  <p>Book a free strategy call and let us create a high-converting website for your business.</p>
+  <a href="contact.html" class="cta-btn">🔥 Book My Free Call</a>
+</section>
+
 <footer>© 2025 LaunchPad Web</footer>
+
+<script>
+// Nav bar shrink on scroll
+window.addEventListener('scroll', function() {
+  const nav = document.getElementById('navbar');
+  if(window.scrollY > 50){
+    nav.classList.add('shrink');
+  } else {
+    nav.classList.remove('shrink');
+  }
+});
+</script>
 
 </body>
   </html>
