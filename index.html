@@ -29,6 +29,7 @@ body{
   scroll-behavior:smooth;
 }
 
+/* Nav */
 nav{
   background:#000;
   padding:20px 40px;
@@ -42,12 +43,10 @@ nav{
   z-index:999;
   transition:padding 0.3s, box-shadow 0.3s;
 }
-
 nav.shrink{
   padding:10px 40px;
   box-shadow:0 6px 20px rgba(0,0,0,0.5);
 }
-
 nav a{
   color:var(--text);
   text-decoration:none;
@@ -55,81 +54,130 @@ nav a{
   font-weight:600;
   transition:color 0.3s;
 }
-
 nav a:hover{color:var(--primary);}
 
-.cta-btn{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  padding:12px 28px;
-  border-radius:16px;
-  color:#1a0a00;
-  font-weight:700;
-  text-decoration:none;
-  box-shadow:0 8px 20px rgba(249,115,22,0.5);
-  transition:transform 0.3s, box-shadow 0.3s;
-}
-
-.cta-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 25px rgba(249,115,22,0.6);
-}
-
+/* Header */
 header{
   text-align:center;
-  padding:180px 20px 120px; /* extra top padding to account for fixed nav */
-  background:radial-gradient(circle at top,#1f1f1f,#000);
+  padding:160px 20px 120px;
+  background:linear-gradient(135deg,#0b0b0b,#1f1f1f);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Animated background shapes */
+.header-shape{
+  position:absolute;
+  width:200px;
+  height:200px;
+  background:radial-gradient(circle,rgba(249,115,22,0.15) 0%,transparent 70%);
+  border-radius:50%;
+  animation: float 12s infinite alternate ease-in-out;
+  z-index:1;
+}
+.header-shape:nth-child(1){top:20%;left:10%;animation-duration:14s;}
+.header-shape:nth-child(2){top:50%;left:70%;animation-duration:18s;}
+.header-shape:nth-child(3){top:70%;left:30%;animation-duration:20s;}
+
+@keyframes float{
+  0%{transform:translateY(0) translateX(0);}
+  50%{transform:translateY(-20px) translateX(20px);}
+  100%{transform:translateY(0) translateX(0);}
 }
 
 .logo-wrap{
   display:inline-block;
   background:#111;
-  padding:24px 28px;
-  border-radius:24px;
+  padding:28px 32px;
+  border-radius:28px;
   margin-bottom:40px;
-  box-shadow:0 0 60px rgba(249,115,22,0.5);
+  box-shadow:0 0 80px rgba(249,115,22,0.6);
+  transition:transform 0.3s;
+  position:relative;
+  z-index:2;
+}
+.logo-wrap:hover{transform:scale(1.05);}
+.logo{max-width:260px;height:auto;}
+
+h1{
+  font-size:3.8rem;
+  font-weight:800;
+  margin-bottom:20px;
+  color:#fff;
+  position:relative;
+  z-index:2;
+}
+.highlight{color:#f97316;}
+
+.subheadline{
+  font-size:1.25rem;
+  color:#cbd5e1;
+  max-width:720px;
+  margin:auto;
+  margin-bottom:50px;
+  line-height:1.6;
+  position:relative;
+  z-index:2;
 }
 
-.logo{max-width:280px;height:auto;}
+.cta-buttons a{
+  margin:0 12px;
+  display:inline-block;
+}
+.cta-btn{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  padding:16px 36px;
+  border-radius:20px;
+  color:#1a0a00;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(249,115,22,0.5);
+  transition:transform 0.3s, box-shadow 0.3s;
+  position:relative;
+  z-index:2;
+}
+.cta-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(249,115,22,0.6);
+}
+.cta-btn.secondary{
+  background:transparent;
+  border:2px solid #f97316;
+  color:#f97316;
+}
+.cta-btn.secondary:hover{
+  background:#f97316;
+  color:#1a0a00;
+}
 
+/* Sections */
 section{
   max-width:1200px;
   margin:auto;
   padding:100px 20px;
 }
-
-h1{font-size:3.6rem;margin-bottom:20px;font-weight:700;}
-h2{text-align:center;font-size:2.8rem;margin-bottom:60px;font-weight:600;}
-p{color:var(--muted);font-size:1.15rem;}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
-.card, .testimonial{
+
+.card,.testimonial{
   background:var(--panel);
   padding:36px;
   border-radius:20px;
   box-shadow:0 20px 40px var(--shadow);
   transition:transform 0.3s, box-shadow 0.3s;
 }
-
-.card:hover, .testimonial:hover{
+.card:hover,.testimonial:hover{
   transform:translateY(-5px);
   box-shadow:0 25px 50px var(--shadow);
 }
 
-.card h3{font-size:1.5rem;margin-bottom:15px;color:#fff;}
-.testimonial p{font-style:italic;font-size:1.05rem;margin-bottom:12px;}
+.card h3,.testimonial h3{color:#fff;margin-bottom:15px;}
+.card p,.testimonial p{color:var(--muted);}
+.testimonial strong{display:block;margin-top:12px;color:#fff;font-weight:700;}
 
-.stars {
-  display:flex;
-  justify-content:center;
-  margin-bottom:12px;
-}
-.stars svg{
-  width:24px;
-  height:24px;
-  margin:0 2px;
-  fill:var(--accent);
-}
+.stars{display:flex;justify-content:flex-start;margin-bottom:12px;}
+.stars svg{width:22px;height:22px;margin-right:4px;fill:var(--accent);}
 
-section.cta-section{
+.cta-section{
   text-align:center;
   background:linear-gradient(135deg,#111,#1a1a1a);
   padding:100px 20px;
@@ -137,15 +185,9 @@ section.cta-section{
   margin:60px 20px;
 }
 
-footer{
-  text-align:center;
-  padding:50px;
-  color:#9ca3af;
-  border-top:1px solid #1f1f1f;
-  font-size:0.95rem;
-}
+footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f;font-size:0.95rem;}
 
-/* Responsive nav for smaller screens */
+/* Responsive nav */
 @media(max-width:768px){
   nav{
     flex-direction:column;
@@ -175,20 +217,30 @@ footer{
 </nav>
 
 <header>
+  <!-- Animated shapes -->
+  <div class="header-shape"></div>
+  <div class="header-shape"></div>
+  <div class="header-shape"></div>
+
   <div class="logo-wrap">
     <img src="launchpadweb-logo.png" class="logo" alt="LaunchPad Web">
   </div>
-  <h1>Websites That Convert Visitors Into Customers</h1>
-  <p>High-converting websites designed to generate real leads and sales — not just clicks.</p>
-  <a href="contact.html" class="cta-btn">🚀 Claim Your Free Strategy Call</a>
+
+  <h1>Websites Built to <span class="highlight">Generate Leads & Sales</span></h1>
+  <p class="subheadline">We design conversion-focused websites that turn visitors into <strong>real customers</strong> — not just traffic.</p>
+
+  <div class="cta-buttons">
+    <a href="contact.html" class="cta-btn">🚀 Get My Free Strategy Call</a>
+    <a href="case-studies.html" class="cta-btn secondary">See Case Studies</a>
+  </div>
 </header>
 
 <section>
   <h2>Why Businesses Choose LaunchPad Web</h2>
   <div class="grid">
-    <div class="card"><h3>Conversion Strategy</h3><p>Every page is crafted to drive actions — calls, form submissions, and bookings.</p></div>
-    <div class="card"><h3>Fast & Mobile-First</h3><p>Optimized for speed, mobile, and SEO for maximum results.</p></div>
-    <div class="card"><h3>Built to Scale</h3><p>Designed to grow with your business and advertising campaigns.</p></div>
+    <div class="card"><h3>Conversion Strategy</h3><p>Every page is designed to drive action — calls, forms, and bookings.</p></div>
+    <div class="card"><h3>Fast & Mobile-First</h3><p>Optimized for speed, SEO, and mobile users.</p></div>
+    <div class="card"><h3>Built to Scale</h3><p>Perfect for ads, SEO, and future growth.</p></div>
   </div>
 </section>
 
@@ -206,6 +258,7 @@ footer{
       <p>“We went from barely any leads to consistent calls every week.”</p>
       <strong>— Local Contractor</strong>
     </div>
+
     <div class="testimonial">
       <div class="stars">
         <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
@@ -214,33 +267,22 @@ footer{
         <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
         <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
       </div>
-      <p>“Our website finally works like a true sales tool.”</p>
+      <p>“Our website finally works like a sales tool.”</p>
       <strong>— Small Business Owner</strong>
-    </div>
-    <div class="testimonial">
-      <div class="stars">
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-      </div>
-      <p>“Worth every dollar — it paid for itself fast.”</p>
-      <strong>— Entrepreneur</strong>
     </div>
   </div>
 </section>
 
 <section class="cta-section">
-  <h2>Ready to Turn Your Website Into a Lead-Generating Machine?</h2>
-  <p>Book a free strategy call today and get a clear plan to increase leads and sales.</p>
+  <h2>Ready to Turn Your Website Into a Sales Machine?</h2>
+  <p>Book a free strategy call and get a clear plan to increase leads.</p>
   <a href="contact.html" class="cta-btn">🔥 Book My Free Call</a>
 </section>
 
 <footer>© 2025 LaunchPad Web</footer>
 
 <script>
-// Shrink nav bar on scroll
+// Nav bar shrink on scroll
 window.addEventListener('scroll', function() {
   const nav = document.getElementById('navbar');
   if(window.scrollY > 50){
@@ -252,4 +294,5 @@ window.addEventListener('scroll', function() {
 </script>
 
 </body>
-</html>
+  </html>
+  
