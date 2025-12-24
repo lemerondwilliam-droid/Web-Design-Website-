@@ -1,296 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>High-Conversion Website Design | LaunchPad Web</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaunchPad Web | High-Converting Websites</title>
 
-  <meta name="description" content="We build high-converting websites that generate leads, calls, and sales. Book a free strategy call today." />
+<style>
+/* ===== GLOBAL STYLES ===== */
+:root {
+  --bg:#0b0b0b;
+  --panel:#141414;
+  --primary:#f97316;
+  --primary-dark:#ea580c;
+  --text:#ffffff;
+  --muted:#d1d5db;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
 
-  <style>
-    :root {
-      --bg-dark: #0b0b0b;
-      --panel-dark: #141414;
-      --primary: #f97316;
-      --primary-dark: #ea580c;
-      --text-main: #ffffff;
-      --text-muted: #d1d5db;
-    }
+/* ===== NAV ===== */
+nav{
+  position:sticky; top:0; z-index:100;
+  background:#000;
+  border-bottom:1px solid #1f1f1f;
+}
+.nav-inner{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+}
+.nav-links a{
+  margin-left:22px;
+  font-size:.95rem;
+  color:var(--muted);
+}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  margin-left:22px;
+  padding:10px 18px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  color:#1a0a00;
+  border-radius:8px;
+  font-weight:bold;
+}
 
-    * { box-sizing: border-box; }
+/* ===== HERO ===== */
+header{
+  text-align:center;
+  padding:100px 20px;
+  background:radial-gradient(circle at top,#1f1f1f,#000);
+}
+header h1{
+  font-size:3rem;
+  max-width:900px;
+  margin:auto;
+}
+header p{
+  max-width:720px;
+  margin:30px auto 40px;
+  color:var(--muted);
+  font-size:1.2rem;
+}
+.cta{
+  padding:18px 40px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  color:#1a0a00;
+  font-weight:bold;
+  border-radius:12px;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    /* ---------- HERO ---------- */
-    header {
-      padding: 100px 20px 90px;
-      text-align: center;
-      background: radial-gradient(circle at top, #1f1f1f, #000000);
-    }
-
-    .logo-wrap {
-      display: inline-block;
-      background: #111;
-      padding: 20px 26px;
-      border-radius: 18px;
-      margin-bottom: 40px;
-      box-shadow:
-        0 0 0 1px #1f1f1f,
-        0 12px 40px rgba(0,0,0,0.8),
-        0 0 40px rgba(249,115,22,0.25);
-    }
-
-    .logo {
-      max-width: 220px;
-      display: block;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      max-width: 900px;
-      margin: 0 auto 25px;
-    }
-
-    header p {
-      max-width: 760px;
-      margin: 0 auto 40px;
-      font-size: 1.25rem;
-      color: var(--text-muted);
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #1a0a00;
-      padding: 18px 42px;
-      font-size: 1.15rem;
-      font-weight: bold;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 34px rgba(249,115,22,0.35);
-    }
-
-    .subtext {
-      margin-top: 14px;
-      font-size: 0.9rem;
-      color: #9ca3af;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section {
-      padding: 90px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .section-desc {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 60px;
-      color: var(--text-muted);
-      font-size: 1.15rem;
-    }
-
-    /* ---------- CARDS ---------- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-    }
-
-    .card {
-      background: var(--panel-dark);
-      padding: 38px;
-      border-radius: 16px;
-      box-shadow: 0 14px 34px rgba(0,0,0,0.6);
-      border-top: 4px solid var(--primary);
-    }
-
-    .card h3 {
-      margin-bottom: 14px;
-      color: var(--primary);
-      font-size: 1.3rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-    }
-
-    /* ---------- TESTIMONIALS ---------- */
-    .testimonial {
-      background: #111;
-      padding: 34px;
-      border-radius: 16px;
-      border: 1px solid #1f1f1f;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    }
-
-    .testimonial p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-    }
-
-    .testimonial strong {
-      color: var(--text-main);
-    }
-
-    /* ---------- CTA ---------- */
-    .cta-section {
-      background: linear-gradient(135deg, #111111, #000000);
-      text-align: center;
-      border-radius: 20px;
-      padding: 80px 20px;
-      border: 1px solid #1f1f1f;
-    }
-
-    .cta-section h2 {
-      font-size: 2.6rem;
-      margin-bottom: 20px;
-    }
-
-    .cta-section p {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      font-size: 1.15rem;
-      color: var(--text-muted);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: #9ca3af;
-      border-top: 1px solid #1f1f1f;
-    }
-  </style>
+/* ===== SECTIONS ===== */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:90px 20px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card{
+  background:var(--panel);
+  padding:34px;
+  border-radius:16px;
+  border-top:4px solid var(--primary);
+}
+footer{
+  text-align:center;
+  padding:40px;
+  border-top:1px solid #1f1f1f;
+  color:#9ca3af;
+}
+</style>
 </head>
 
 <body>
-  <nav style="background:#000;padding:18px 20px;border-bottom:1px solid #1f1f1f;">
-  <div style="max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;">
-    <a href="index.html" style="color:#fff;font-weight:bold;font-size:1.2rem;text-decoration:none;">
-      LaunchPad Web
-    </a>
-    <div style="display:flex;gap:22px;">
+
+<nav>
+  <div class="nav-inner">
+    <strong>LaunchPad Web</strong>
+    <div class="nav-links">
       <a href="services.html">Services</a>
       <a href="process.html">How It Works</a>
-      <a href="results.html">Results</a>
+      <a href="testimonials.html">Testimonials</a>
       <a href="about.html">About</a>
-      <a href="contact.html" style="color:#f97316;font-weight:bold;">Free Strategy Call</a>
+      <a href="contact.html" class="nav-cta">Free Strategy Call</a>
     </div>
   </div>
 </nav>
 
-<style>
-  nav a { color:#d1d5db;text-decoration:none;font-size:0.95rem; }
-  nav a:hover { color:#ffffff; }
-</style>
-
-
 <header>
-  <div class="logo-wrap">
-    <img src="launchpadweb-logo.png" alt="LaunchPad Web" class="logo" />
-  </div>
-
-  <h1>Your Website Should Bring You Customers — Not Just Look Nice</h1>
-
+  <h1>Websites Built to Generate Leads — Not Just Look Good</h1>
   <p>
-    We design conversion-focused websites that turn visitors into
-    calls, bookings, and paying customers — not just traffic.
+    We design high-converting websites that turn visitors into
+    calls, bookings, and paying customers.
   </p>
-
-  <a href="#contact" class="cta-btn">🚀 Get My Free Strategy Call</a>
-  <div class="subtext">No pressure • No obligation • Real advice</div>
+  <a href="contact.html" class="cta">🚀 Get My Free Strategy Call</a>
 </header>
 
 <section>
-  <h2>Why Our Websites Convert Better</h2>
-  <p class="section-desc">
-    We don’t guess. We build websites using proven conversion principles that
-    guide visitors toward action.
-  </p>
-
   <div class="grid">
     <div class="card">
-      <h3>Designed to Sell</h3>
-      <p>Clear messaging, strong CTAs, and layouts built to drive action.</p>
+      <h3>Conversion-Focused Design</h3>
+      <p>Every element guides visitors toward action.</p>
     </div>
     <div class="card">
       <h3>Fast & Mobile-First</h3>
-      <p>Optimized for speed, SEO, and mobile users — where most leads happen.</p>
+      <p>Optimized for speed, SEO, and mobile users.</p>
     </div>
     <div class="card">
       <h3>Built to Scale</h3>
-      <p>Perfect for ads, SEO, and future growth without costly rebuilds.</p>
+      <p>Perfect for ads, SEO, and growth.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>What Our Clients Say</h2>
-  <p class="section-desc">
-    Businesses trust LaunchPad Web to turn their website into a revenue engine.
-  </p>
-
-  <div class="grid">
-    <div class="testimonial">
-      <p>
-        “Within weeks of launching our new site, we started getting
-        consistent calls. The difference was night and day.”
-      </p>
-      <strong>— Mike R., Local Service Business</strong>
-    </div>
-
-    <div class="testimonial">
-      <p>
-        “Our old website looked fine but didn’t convert. LaunchPad Web
-        rebuilt it with strategy — and it finally works.”
-      </p>
-      <strong>— Sarah L., Small Business Owner</strong>
-    </div>
-
-    <div class="testimonial">
-      <p>
-        “We now use our website confidently for ads and SEO.
-        It actually pays for itself.”
-      </p>
-      <strong>— Jason T., Entrepreneur</strong>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section" id="contact">
-  <h2>Let’s Build a Website That Works for You</h2>
-  <p>
-    If your website isn’t bringing in leads, it’s costing you money.
-    Book a free strategy call and get a clear plan to fix it.
-  </p>
-
-  <a href="mailto:your@email.com" class="cta-btn">🔥 Book My Free Strategy Call</a>
-</section>
-
-<footer>
-  © 2025 LaunchPad Web • High-Conversion Websites
-</footer>
-
+<footer>© 2025 LaunchPad Web</footer>
 </body>
   </html>
-      
+  
