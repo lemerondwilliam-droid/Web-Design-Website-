@@ -3,311 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LaunchPad Web | High-Converting Websites</title>
+<title>LaunchPad Web | Websites That Generate Leads</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --bg:#0b0b0b;
-  --panel:#1a1a1a;
+  --panel:#161616;
   --primary:#f97316;
-  --secondary:#ea580c;
+  --accent:#fbbf24;
   --text:#ffffff;
   --muted:#cbd5e1;
-  --accent:#fbbf24;
-  --shadow:rgba(0,0,0,0.6);
 }
-
-*{box-sizing:border-box;}
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:'Inter', sans-serif;
+  font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.6;
-  scroll-behavior:smooth;
 }
 
-/* Nav */
+/* NAV */
 nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
   background:#000;
-  padding:20px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:20px 40px;
   border-bottom:1px solid #1f1f1f;
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:999;
-  transition:padding 0.3s, box-shadow 0.3s;
+  transition:all .3s ease;
 }
 nav.shrink{
   padding:10px 40px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.5);
 }
 nav a{
-  color:var(--text);
+  color:#fff;
   text-decoration:none;
-  margin-left:22px;
+  margin-left:24px;
   font-weight:600;
-  transition:color 0.3s;
 }
-nav a:hover{color:var(--primary);}
+nav a:hover{color:var(--primary)}
 
-/* Header */
+/* HERO */
 header{
-  text-align:center;
   padding:160px 20px 120px;
-  background:linear-gradient(135deg,#0b0b0b,#1f1f1f);
-  position:relative;
-  overflow:hidden;
+  text-align:center;
+  background:
+    radial-gradient(circle at top, rgba(249,115,22,.15), transparent 60%),
+    linear-gradient(180deg,#0b0b0b,#111);
 }
-
-/* Animated background shapes */
-.header-shape{
-  position:absolute;
-  width:200px;
-  height:200px;
-  background:radial-gradient(circle,rgba(249,115,22,0.15) 0%,transparent 70%);
-  border-radius:50%;
-  animation: float 12s infinite alternate ease-in-out;
-  z-index:1;
-}
-.header-shape:nth-child(1){top:20%;left:10%;animation-duration:14s;}
-.header-shape:nth-child(2){top:50%;left:70%;animation-duration:18s;}
-.header-shape:nth-child(3){top:70%;left:30%;animation-duration:20s;}
-
-@keyframes float{
-  0%{transform:translateY(0) translateX(0);}
-  50%{transform:translateY(-20px) translateX(20px);}
-  100%{transform:translateY(0) translateX(0);}
-}
-
-.logo-wrap{
-  display:inline-block;
-  background:#111;
-  padding:28px 32px;
-  border-radius:28px;
+.logo{
+  max-width:260px;
   margin-bottom:40px;
-  box-shadow:0 0 80px rgba(249,115,22,0.6);
-  transition:transform 0.3s;
-  position:relative;
-  z-index:2;
+  box-shadow:0 0 60px rgba(249,115,22,.4);
+  border-radius:24px;
 }
-.logo-wrap:hover{transform:scale(1.05);}
-.logo{max-width:260px;height:auto;}
-
 h1{
   font-size:3.8rem;
   font-weight:800;
   margin-bottom:20px;
-  color:#fff;
-  position:relative;
-  z-index:2;
 }
-.highlight{color:#f97316;}
-
-.subheadline{
+.highlight{color:var(--primary)}
+.subhead{
+  max-width:780px;
+  margin:0 auto 40px;
   font-size:1.25rem;
-  color:#cbd5e1;
-  max-width:720px;
-  margin:auto;
-  margin-bottom:50px;
-  line-height:1.6;
-  position:relative;
-  z-index:2;
+  color:var(--muted);
+}
+.bullets{
+  max-width:600px;
+  margin:0 auto 50px;
+  text-align:left;
+}
+.bullets li{
+  margin:10px 0;
+  font-weight:600;
 }
 
-.cta-buttons a{
-  margin:0 12px;
+/* CTA */
+.cta{
   display:inline-block;
-}
-.cta-btn{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
   padding:16px 36px;
-  border-radius:20px;
-  color:#1a0a00;
+  border-radius:18px;
   font-weight:700;
   text-decoration:none;
-  box-shadow:0 10px 25px rgba(249,115,22,0.5);
-  transition:transform 0.3s, box-shadow 0.3s;
-  position:relative;
-  z-index:2;
-}
-.cta-btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 14px 30px rgba(249,115,22,0.6);
-}
-.cta-btn.secondary{
-  background:transparent;
-  border:2px solid #f97316;
-  color:#f97316;
-}
-.cta-btn.secondary:hover{
-  background:#f97316;
+  background:linear-gradient(135deg,var(--primary),#ea580c);
   color:#1a0a00;
+  box-shadow:0 12px 30px rgba(249,115,22,.5);
 }
+.cta.secondary{
+  background:transparent;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  margin-left:16px;
+}
+.cta:hover{transform:translateY(-3px)}
 
-/* Sections */
+/* SECTIONS */
 section{
   max-width:1200px;
   margin:auto;
   padding:100px 20px;
 }
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
+h2{
+  text-align:center;
+  font-size:2.6rem;
+  margin-bottom:60px;
+}
 
-.card,.testimonial{
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+.card{
   background:var(--panel);
   padding:36px;
   border-radius:20px;
-  box-shadow:0 20px 40px var(--shadow);
-  transition:transform 0.3s, box-shadow 0.3s;
-}
-.card:hover,.testimonial:hover{
-  transform:translateY(-5px);
-  box-shadow:0 25px 50px var(--shadow);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
 }
 
-.card h3,.testimonial h3{color:#fff;margin-bottom:15px;}
-.card p,.testimonial p{color:var(--muted);}
-.testimonial strong{display:block;margin-top:12px;color:#fff;font-weight:700;}
+/* VIDEO */
+.video-box{
+  background:#000;
+  border-radius:24px;
+  padding:60px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.7);
+}
+.video-placeholder{
+  background:#111;
+  padding:60px;
+  border-radius:20px;
+  font-size:1.2rem;
+  color:var(--muted);
+}
 
-.stars{display:flex;justify-content:flex-start;margin-bottom:12px;}
-.stars svg{width:22px;height:22px;margin-right:4px;fill:var(--accent);}
+/* TESTIMONIALS */
+.testimonial{
+  background:var(--panel);
+  padding:36px;
+  border-radius:20px;
+}
+.stars{
+  color:var(--accent);
+  margin-bottom:12px;
+}
 
-.cta-section{
+/* FINAL CTA */
+.cta-box{
   text-align:center;
   background:linear-gradient(135deg,#111,#1a1a1a);
-  padding:100px 20px;
   border-radius:30px;
-  margin:60px 20px;
+  padding:90px 20px;
 }
 
-footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f;font-size:0.95rem;}
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  color:#9ca3af;
+  border-top:1px solid #1f1f1f;
+}
 
-/* Responsive nav */
+/* MOBILE */
 @media(max-width:768px){
-  nav{
-    flex-direction:column;
-    padding:15px 20px;
-  }
-  nav.shrink{
-    padding:8px 20px;
-  }
-  nav div{
-    margin-top:10px;
-  }
-  nav a{
-    margin-left:0;
-    margin-right:15px;
-  }
-}
-
-/* Chatbot Styles */
-#chatbot {
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  width:60px;
-  height:60px;
-  background:var(--primary);
-  border-radius:50%;
-  box-shadow:0 8px 25px rgba(249,115,22,0.5);
-  cursor:pointer;
-  z-index:1000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:28px;
-  color:#1a0a00;
-  transition:transform 0.3s, box-shadow 0.3s;
-}
-#chatbot:hover{
-  transform:scale(1.1);
-  box-shadow:0 12px 30px rgba(249,115,22,0.7);
-}
-#chat-window {
-  position:fixed;
-  bottom:100px;
-  right:30px;
-  width:350px;
-  max-width:90%;
-  background:var(--panel);
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.7);
-  display:none;
-  flex-direction:column;
-  overflow:hidden;
-  z-index:1000;
-}
-#chat-window header {
-  background:var(--primary);
-  padding:16px;
-  font-weight:700;
-  color:#1a0a00;
-  font-size:1rem;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-#chat-window header img{
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  background:#fff;
-}
-#chat-window .messages {
-  padding:16px;
-  flex:1;
-  max-height:300px;
-  overflow-y:auto;
-}
-#chat-window .messages p{
-  margin:8px 0;
-  line-height:1.4;
-}
-#chat-window .messages .bot-message{
-  color:#fbbf24;
-}
-#chat-window .messages .typing{
-  font-style:italic;
-  opacity:0.7;
-}
-
-#chat-window .input-area {
-  display:flex;
-  border-top:1px solid #333;
-}
-#chat-window input{
-  flex:1;
-  padding:12px;
-  border:none;
-  background:#111;
-  color:#fff;
-  border-radius:0 0 0 20px;
-  outline:none;
-}
-#chat-window button{
-  padding:12px 16px;
-  border:none;
-  background:var(--primary);
-  color:#1a0a00;
-  font-weight:700;
-  cursor:pointer;
-  border-radius:0 0 20px 0;
-  transition:transform 0.2s;
-}
-#chat-window button:hover{
-  transform:scale(1.05);
+  h1{font-size:2.6rem}
+  nav{padding:15px 20px}
+  nav.shrink{padding:8px 20px}
 }
 </style>
 </head>
+
 <body>
 
-<nav id="navbar">
-  <strong style="font-size:1.4rem;">LaunchPad Web</strong>
+<nav id="nav">
+  <strong>LaunchPad Web</strong>
   <div>
     <a href="index.html">Home</a>
     <a href="case-studies.html">Case Studies</a>
@@ -315,131 +193,79 @@ footer{text-align:center;padding:50px;color:#9ca3af;border-top:1px solid #1f1f1f
 </nav>
 
 <header>
-  <div class="header-shape"></div>
-  <div class="header-shape"></div>
-  <div class="header-shape"></div>
+  <img src="launchpadweb-logo.png" class="logo" alt="LaunchPad Web">
 
-  <div class="logo-wrap">
-    <img src="launchpadweb-logo.png" class="logo" alt="LaunchPad Web">
-  </div>
+  <h1>Turn Your Website Into a <span class="highlight">Lead-Generating Machine</span></h1>
 
-  <h1>Websites Built to <span class="highlight">Generate Leads & Sales</span></h1>
-  <p class="subheadline">We design conversion-focused websites that turn visitors into <strong>real customers</strong> — not just traffic.</p>
+  <p class="subhead">
+    We build high-converting websites for service businesses that want
+    more calls, more leads, and more revenue — fast.
+  </p>
 
-  <div class="cta-buttons">
-    <a href="contact.html" class="cta-btn">🚀 Get My Free Strategy Call</a>
-    <a href="case-studies.html" class="cta-btn secondary">See Case Studies</a>
-  </div>
+  <ul class="bullets">
+    <li>✔ Get more calls & form submissions</li>
+    <li>✔ Built for ads, SEO & long-term growth</li>
+    <li>✔ Mobile-first & lightning fast</li>
+  </ul>
+
+  <a href="contact.html" class="cta">🚀 Start My Free Strategy Call</a>
+  <a href="case-studies.html" class="cta secondary">See Real Results</a>
 </header>
 
 <section>
   <h2>Why Businesses Choose LaunchPad Web</h2>
   <div class="grid">
-    <div class="card"><h3>Conversion Strategy</h3><p>Every page is designed to drive action — calls, forms, and bookings.</p></div>
-    <div class="card"><h3>Fast & Mobile-First</h3><p>Optimized for speed, SEO, and mobile users.</p></div>
-    <div class="card"><h3>Built to Scale</h3><p>Perfect for ads, SEO, and future growth.</p></div>
+    <div class="card"><h3>Conversion Strategy</h3><p>Designed to turn visitors into leads.</p></div>
+    <div class="card"><h3>Speed & Mobile</h3><p>Fast loading and optimized for phones.</p></div>
+    <div class="card"><h3>Built to Scale</h3><p>Perfect for ads, SEO, and growth.</p></div>
   </div>
 </section>
 
 <section>
-  <h2>Client Results</h2>
-  <div class="grid">
-    <div class="testimonial">
-      <div class="stars">
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7 13.8,11 15.5,17 10,13.5 4.5,17 6.2,11 1,7 7.4,7"/></svg>
-      </div>
-      <p>“We went from barely any leads to consistent calls every week.”</p>
-      <strong>— Local Contractor</strong>
+  <h2>How It Works</h2>
+  <div class="video-box">
+    <div class="video-placeholder">
+      ▶ Short explainer video goes here (increases conversions 30–80%)
     </div>
   </div>
 </section>
 
-<section class="cta-section">
-  <h2>Ready to Turn Your Website Into a Sales Machine?</h2>
-  <p>Book a free strategy call and get a clear plan to increase leads.</p>
-  <a href="contact.html" class="cta-btn">🔥 Book My Free Call</a>
+<section>
+  <h2>Real Client Results</h2>
+  <div class="grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      “We went from barely any leads to consistent calls every week.”
+      <strong>— Local Contractor</strong>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      “Our website finally works like a sales tool.”
+      <strong>— Small Business Owner</strong>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      “Paid for itself within the first month.”
+      <strong>— Service Entrepreneur</strong>
+    </div>
+  </div>
+</section>
+
+<section class="cta-box">
+  <h2>Ready to Get More Leads?</h2>
+  <p>Book a free strategy call and get a clear plan to increase revenue.</p>
+  <a href="contact.html" class="cta">🔥 Book My Free Call</a>
 </section>
 
 <footer>© 2025 LaunchPad Web</footer>
 
-<!-- Chatbot -->
-<div id="chatbot">💬</div>
-<div id="chat-window">
-  <header><img src="https://cdn-icons-png.flaticon.com/512/4712/4712184.png" alt="Agent Avatar">LaunchPad AI</header>
-  <div class="messages" id="chat-messages">
-    <p class="bot-message">Hi! How can I help you today?</p>
-  </div>
-  <div class="input-area">
-    <input type="text" id="chat-input" placeholder="Type your message...">
-    <button id="chat-send">Send</button>
-  </div>
-</div>
-
 <script>
-// Nav shrink
-window.addEventListener('scroll', function() {
-  const nav = document.getElementById('navbar');
-  nav.classList.toggle('shrink', window.scrollY > 50);
-});
-
-// Chatbot toggle
-const chatbotBtn = document.getElementById('chatbot');
-const chatWindow = document.getElementById('chat-window');
-const chatMessages = document.getElementById('chat-messages');
-const chatInput = document.getElementById('chat-input');
-const chatSend = document.getElementById('chat-send');
-
-chatbotBtn.addEventListener('click', () => {
-  chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
-});
-
-// ChatGPT Integration
-chatSend.addEventListener('click', async () => {
-  const userMessage = chatInput.value.trim();
-  if (!userMessage) return;
-
-  const pUser = document.createElement('p');
-  pUser.textContent = "You: " + userMessage;
-  chatMessages.appendChild(pUser);
-
-  chatInput.value = '';
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-
-  const typing = document.createElement('p');
-  typing.textContent = "Agent is typing...";
-  typing.classList.add('typing');
-  chatMessages.appendChild(typing);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-
-  try {
-    const res = await fetch('YOUR_SERVER_ENDPOINT/chat', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({message: userMessage})
-    });
-    const data = await res.json();
-
-    chatMessages.removeChild(typing);
-    const pBot = document.createElement('p');
-    pBot.textContent = "Agent: " + data.reply;
-    pBot.classList.add('bot-message');
-    chatMessages.appendChild(pBot);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  } catch(err){
-    chatMessages.removeChild(typing);
-    const pError = document.createElement('p');
-    pError.textContent = "Agent: Sorry, something went wrong.";
-    pError.classList.add('bot-message');
-    chatMessages.appendChild(pError);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-    console.error(err);
-  }
-});
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav')
+    .classList.toggle('shrink',window.scrollY>50)
+})
 </script>
+
 </body>
-  </html>
+    </html>
   
