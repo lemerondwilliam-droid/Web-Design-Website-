@@ -3,163 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>High‑Conversion Website Design | Grow Your Business Online</title>
-  <meta name="description" content="We design high‑converting, mobile‑first websites that turn visitors into paying customers. Get a free strategy call today." />
+  <title>High-Conversion Website Design | LaunchPad Web</title>
+
+  <meta name="description" content="We build high-converting websites that generate leads, calls, and sales. Book a free strategy call today." />
+
   <style>
     :root {
       --bg-dark: #0b0b0b;
       --panel-dark: #141414;
-      --primary-orange: #f97316;
-      --primary-orange-dark: #ea580c;
-      --accent-white: #ffffff;
+      --primary: #f97316;
+      --primary-dark: #ea580c;
+      --text-main: #ffffff;
       --text-muted: #d1d5db;
     }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg-dark);
-      color: var(--accent-white);
+      color: var(--text-main);
       line-height: 1.6;
     }
+
+    /* ---------- HERO ---------- */
     header {
-      padding: 90px 20px 80px;
+      padding: 100px 20px 90px;
       text-align: center;
       background: radial-gradient(circle at top, #1f1f1f, #000000);
     }
+
     .logo {
-      max-width: 320px;
-      margin-bottom: 30px;
+      max-width: 300px;
+      margin-bottom: 35px;
     }
+
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      color: var(--accent-white);
+      font-size: 3rem;
+      max-width: 900px;
+      margin: 0 auto 25px;
     }
+
     header p {
-      max-width: 720px;
-      margin: 0 auto 35px;
-      font-size: 1.2rem;
+      max-width: 760px;
+      margin: 0 auto 40px;
+      font-size: 1.25rem;
       color: var(--text-muted);
     }
+
     .cta-btn {
       display: inline-block;
-      background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #1a0a00;
-      padding: 16px 36px;
-      font-size: 1.1rem;
+      padding: 18px 42px;
+      font-size: 1.15rem;
       font-weight: bold;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
+
     .cta-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(249,115,22,0.35);
+      box-shadow: 0 14px 34px rgba(249,115,22,0.35);
     }
+
+    .subtext {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    /* ---------- SECTIONS ---------- */
     section {
-      padding: 80px 20px;
+      padding: 90px 20px;
       max-width: 1100px;
       margin: auto;
     }
+
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 60px;
+      color: var(--text-muted);
+      font-size: 1.15rem;
+    }
+
+    /* ---------- CARDS ---------- */
     .usp {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
+      gap: 32px;
     }
+
     .card {
       background: var(--panel-dark);
-      padding: 34px;
-      border-radius: 14px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-      border-top: 3px solid var(--primary-orange);
+      padding: 38px;
+      border-radius: 16px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.6);
+      border-top: 4px solid var(--primary);
     }
+
     .card h3 {
-      color: var(--primary-orange);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-size: 1.3rem;
     }
+
     .card p {
       color: var(--text-muted);
     }
+
+    /* ---------- CTA ---------- */
     .cta-section {
       background: linear-gradient(135deg, #111111, #000000);
       text-align: center;
-      border-radius: 18px;
-      padding: 70px 20px;
+      border-radius: 20px;
+      padding: 80px 20px;
       border: 1px solid #1f1f1f;
     }
+
     .cta-section h2 {
-      font-size: 2.3rem;
-      margin-bottom: 18px;
-      color: var(--accent-white);
+      font-size: 2.6rem;
+      margin-bottom: 20px;
     }
+
     .cta-section p {
-      max-width: 620px;
-      margin: 0 auto 35px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      font-size: 1.1rem;
     }
+
     footer {
       text-align: center;
-      padding: 35px 20px;
+      padding: 40px 20px;
       font-size: 0.9rem;
       color: #9ca3af;
       border-top: 1px solid #1f1f1f;
     }
   </style>
 </head>
+
 <body>
 
+<!-- HERO -->
 <header>
-  <img src="launchpadweb-logo.png" alt="LaunchPad Web – Website Design & Development" class="logo" />
-  <h1>Turn Clicks Into Customers With a Website Built to Sell</h1>
+  <img src="launchpadweb-logo.png" alt="LaunchPad Web" class="logo" />
+
+  <h1>Your Website Should Bring You Customers — Not Just Look Nice</h1>
+
   <p>
-    Your website shouldn’t just exist — it should work for you 24/7. At <strong>LaunchPad Web</strong>, we build
-    conversion‑driven websites that attract the right visitors, earn trust instantly, and turn interest
-    into calls, bookings, and sales.
+    Most websites fail because they aren’t built to convert. At <strong>LaunchPad Web</strong>,
+    we design high-performance websites that turn visitors into
+    calls, bookings, and paying customers — consistently.
   </p>
-  <a href="#contact" class="cta-btn">🚀 Launch My Website</a>
+
+  <a href="#contact" class="cta-btn">🚀 Get My Free Strategy Call</a>
+  <div class="subtext">No pressure • No obligation • Real actionable advice</div>
 </header>
 
+<!-- WHY -->
 <section>
-  <h2 style="text-align:center; margin-bottom:40px; color:#ffffff;">Why LaunchPad Web Delivers Better Results</h2>
+  <h2>Why Our Websites Outperform the Competition</h2>
+  <p class="section-desc">
+    This isn’t about flashy design. It’s about building a website that works like
+    a 24/7 sales machine for your business.
+  </p>
+
   <div class="usp">
     <div class="card">
-      <h3>Designed to Convert, Not Just Impress</h3>
+      <h3>Built for Conversions</h3>
       <p>
-        Every page is intentionally structured to guide visitors toward one clear action — calling, booking,
-        or contacting you. No clutter. No confusion. Just results.
+        Every element is intentional — from headlines to buttons — guiding visitors
+        toward one clear action that grows your business.
       </p>
     </div>
 
     <div class="card">
-      <h3>Fast, Mobile‑First & Google‑Ready</h3>
+      <h3>Fast, Mobile-First & SEO-Ready</h3>
       <p>
-        Speed and mobile optimization directly impact your rankings and conversions. Our websites load fast,
-        look incredible on every device, and are built with clean code Google loves.
+        Speed and mobile usability directly impact leads. We build clean,
+        lightning-fast websites optimized for Google and real users.
       </p>
     </div>
+
     <div class="card">
-      <h3>A Website That Grows With Your Business</h3>
+      <h3>Designed to Scale</h3>
       <p>
-        Whether you want more calls today or scalability tomorrow, we build flexible websites that support
-        SEO, advertising, and future expansion without costly rebuilds.
+        Whether you’re running ads, focusing on SEO, or expanding later,
+        your website will be ready — no rebuild required.
       </p>
     </div>
   </div>
 </section>
 
+<!-- FINAL CTA -->
 <section class="cta-section" id="contact">
-  <h2>Let’s Build a Website That Pays for Itself</h2>
+  <h2>Let’s Turn Your Website Into a Sales Asset</h2>
   <p>
-    If your current website isn’t bringing in consistent leads, it’s costing you money.
-    Book a free strategy call and we’ll show you exactly how to turn your website into a
-    high‑performing sales asset — no pressure, just a clear plan.
+    If your website isn’t generating consistent leads, it’s costing you money every day.
+    Book a free strategy call and we’ll show you exactly what’s holding your site back
+    — and how to fix it.
   </p>
-  <a href="mailto:your@email.com" class="cta-btn">🔥 Launch My Free Strategy Call</a>
+
+  <a href="mailto:your@email.com" class="cta-btn">🔥 Book My Free Strategy Call</a>
 </section>
 
 <footer>
-  © 2025 LaunchPad Web. All rights reserved.
+  © 2025 LaunchPad Web • High-Conversion Website Design
 </footer>
 
 </body>
