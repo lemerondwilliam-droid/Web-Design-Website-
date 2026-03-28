@@ -39,15 +39,8 @@ nav{
   border-bottom:1px solid #1f1f1f;
   transition:all .3s ease;
 }
-nav.shrink{
-  padding:10px 40px;
-}
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:24px;
-  font-weight:600;
-}
+nav.shrink{padding:10px 40px;}
+nav a{color:#fff;text-decoration:none;margin-left:24px;font-weight:600;}
 nav a:hover{color:var(--primary)}
 
 /* HERO */
@@ -64,11 +57,7 @@ header{
   box-shadow:0 0 60px rgba(249,115,22,.4);
   border-radius:24px;
 }
-h1{
-  font-size:3.8rem;
-  font-weight:800;
-  margin-bottom:20px;
-}
+h1{font-size:3.8rem;font-weight:800;margin-bottom:20px;}
 .highlight{color:var(--primary)}
 .subhead{
   max-width:780px;
@@ -76,15 +65,8 @@ h1{
   font-size:1.25rem;
   color:var(--muted);
 }
-.bullets{
-  max-width:600px;
-  margin:0 auto 50px;
-  text-align:left;
-}
-.bullets li{
-  margin:10px 0;
-  font-weight:600;
-}
+.bullets{max-width:600px;margin:0 auto 50px;text-align:left;}
+.bullets li{margin:10px 0;font-weight:600;}
 
 /* CTA */
 .cta{
@@ -106,88 +88,66 @@ h1{
 }
 .cta:hover{transform:translateY(-3px)}
 
-/* SECTIONS */
-section{
-  max-width:1200px;
-  margin:auto;
-  padding:100px 20px;
-}
-h2{
+/* SLIDER */
+.slider{position:relative;overflow:hidden;background:#0b0b0b;}
+.slide{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
   text-align:center;
-  font-size:2.6rem;
-  margin-bottom:60px;
+  padding:40px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .6s ease;
 }
+.slide.active{opacity:1;transform:translateY(0);} 
+.slide h2{font-size:2.5rem;margin-bottom:10px;}
+.slide p{color:var(--muted);font-size:1.2rem;}
+
+.controls{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+}
+.dot{
+  width:10px;height:10px;border-radius:50%;background:#555;cursor:pointer;
+}
+.dot.active{background:var(--primary);}
+
+/* SECTIONS */
+section{max-width:1200px;margin:auto;padding:100px 20px;}
+h2{text-align:center;font-size:2.6rem;margin-bottom:60px;}
 
 /* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
-}
-.card{
-  background:var(--panel);
-  padding:36px;
-  border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,.6);
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;}
+.card{background:var(--panel);padding:36px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.6);}
 
 /* VIDEO */
-.video-box{
-  background:#000;
-  border-radius:24px;
-  padding:60px;
-  text-align:center;
-  box-shadow:0 20px 50px rgba(0,0,0,.7);
-}
-.video-placeholder{
-  background:#111;
-  padding:60px;
-  border-radius:20px;
-  font-size:1.2rem;
-  color:var(--muted);
-}
+.video-box{background:#000;border-radius:24px;padding:60px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.7);} 
+.video-placeholder{background:#111;padding:60px;border-radius:20px;font-size:1.2rem;color:var(--muted);} 
 
 /* TESTIMONIALS */
-.testimonial{
-  background:var(--panel);
-  padding:36px;
-  border-radius:20px;
-}
-.stars{
-  color:var(--accent);
-  margin-bottom:12px;
-}
+.testimonial{background:var(--panel);padding:36px;border-radius:20px;}
+.stars{color:var(--accent);margin-bottom:12px;}
 
 /* FINAL CTA */
-.cta-box{
-  text-align:center;
-  background:linear-gradient(135deg,#111,#1a1a1a);
-  border-radius:30px;
-  padding:90px 20px;
-}
+.cta-box{text-align:center;background:linear-gradient(135deg,#111,#1a1a1a);border-radius:30px;padding:90px 20px;}
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  color:#9ca3af;
-  border-top:1px solid #1f1f1f;
-}
+footer{text-align:center;padding:40px;color:#9ca3af;border-top:1px solid #1f1f1f;}
 
 /* MOBILE */
 @media(max-width:768px){
   h1{font-size:2.6rem}
   nav{padding:15px 20px}
   nav.shrink{padding:8px 20px}
-
-  /* Stack buttons nicely */
-  .cta{
-    display:block;
-    margin:10px auto;
-  }
-  .cta.secondary{
-    margin-left:0;
-  }
+  .cta{display:block;margin:10px auto;}
+  .cta.secondary{margin-left:0;}
 }
 </style>
 </head>
@@ -218,10 +178,60 @@ footer{
     <li>✔ Mobile-first & lightning fast</li>
   </ul>
 
-  <!-- UPDATED BUTTONS -->
   <a href="tel:2624129900" class="cta">🚀 Start My Free Strategy Call</a>
   <a href="case-studies.html" class="cta secondary">See Real Results</a>
 </header>
+
+<!-- SLIDESHOW SECTION -->
+<div class="slider">
+
+  <div class="slide active">
+    <h2>Most Websites <span class="highlight">Don’t Bring Customers</span></h2>
+    <p>They just sit there doing nothing</p>
+  </div>
+
+  <div class="slide">
+    <h2>No Calls. No Leads. <span class="highlight">No Growth.</span></h2>
+    <p>Your site should be your best salesperson</p>
+  </div>
+
+  <div class="slide">
+    <h2>That’s Where <span class="highlight">We’re Different</span></h2>
+    <p>We build for results, not just looks</p>
+  </div>
+
+  <div class="slide">
+    <h2>Built to <span class="highlight">Convert</span></h2>
+    <p>Mobile optimized • Fast • Professional</p>
+  </div>
+
+  <div class="slide">
+    <h2>More Calls. <span class="highlight">More Leads.</span> More Sales.</h2>
+    <p>Real growth for real businesses</p>
+  </div>
+
+  <div class="slide">
+    <h2>Trusted by Businesses Ready to <span class="highlight">Grow</span></h2>
+    <p>Join others leveling up</p>
+  </div>
+
+  <div class="slide">
+    <h2>Get Your <span class="highlight">FREE Website Audit</span></h2>
+    <p>See how to get more customers</p>
+    <a href="tel:2624129900" class="cta">Start Today</a>
+  </div>
+
+  <div class="controls">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+</div>
 
 <section>
   <h2>Why Businesses Choose LaunchPad Web</h2>
@@ -275,6 +285,31 @@ window.addEventListener('scroll',()=>{
   document.getElementById('nav')
     .classList.toggle('shrink',window.scrollY>50)
 })
+
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+let index=0;
+
+function showSlide(i){
+  slides.forEach((s,idx)=>{
+    s.classList.remove('active');
+    dots[idx].classList.remove('active');
+  });
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+}
+
+setInterval(()=>{
+  index=(index+1)%slides.length;
+  showSlide(index);
+},4000);
+
+dots.forEach((dot,i)=>{
+  dot.addEventListener('click',()=>{
+    index=i;
+    showSlide(index);
+  });
+});
 </script>
 
 </body>
