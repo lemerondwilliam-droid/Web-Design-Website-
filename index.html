@@ -50,7 +50,7 @@ nav a:hover{color:var(--primary)}
 
 /* HERO */
 header{
-  padding:180px 40px 140px;
+  padding:140px 40px 90px;
   background:
     radial-gradient(circle at top, rgba(249,115,22,.15), transparent 60%),
     linear-gradient(180deg,#0b0b0b,#111);
@@ -61,40 +61,41 @@ header{
   margin:auto;
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
-  gap:60px;
+  gap:40px;
   align-items:center;
 }
-
+  
 .logo{
-  max-width:240px;
-  margin-bottom:30px;
+  max-width:180px;
+  margin-bottom:20px;
   border-radius:20px;
   box-shadow:0 0 50px rgba(249,115,22,.3);
 }
 
 h1{
-  font-size:3.5rem;
+  font-size:3.2rem;
   line-height:1.1;
+  margin-bottom:15px;
 }
 
 .highlight{color:var(--primary)}
 
 .subhead{
-  margin:20px 0 30px;
-  font-size:1.2rem;
+  margin:15px 0 25px;
+  font-size:1.15rem;
   color:var(--muted);
 }
 
 .cta{
   display:inline-block;
-  padding:16px 36px;
+  padding:14px 32px;
   border-radius:18px;
   font-weight:700;
   text-decoration:none;
   background:linear-gradient(135deg,var(--primary),#ea580c);
   color:#1a0a00;
   box-shadow:0 12px 30px rgba(249,115,22,.5);
-  margin-right:15px;
+  margin-right:12px;
 }
 
 .cta.secondary{
@@ -105,13 +106,13 @@ h1{
 
 .hero-box{
   background:var(--panel);
-  padding:40px;
+  padding:30px;
   border-radius:24px;
   box-shadow:0 30px 60px rgba(0,0,0,.6);
 }
 
 .hero-box li{
-  margin:12px 0;
+  margin:8px 0;
   font-weight:600;
 }
 
@@ -119,61 +120,80 @@ h1{
 section{
   max-width:1200px;
   margin:auto;
-  padding:120px 40px;
+  padding:70px 40px;
 }
 
 h2{
   text-align:center;
-  font-size:2.6rem;
-  margin-bottom:60px;
+  font-size:2.4rem;
+  margin-bottom:35px;
 }
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
+  gap:25px;
 }
 
 .card{
   background:var(--panel);
-  padding:40px;
+  padding:30px;
   border-radius:24px;
   border:1px solid #222;
   transition:.3s;
 }
+
 .card:hover{
   transform:translateY(-6px);
   box-shadow:0 30px 60px rgba(0,0,0,.7);
 }
 
+.card h3{
+  margin-top:0;
+  margin-bottom:12px;
+}
+
 /* PROBLEM STRIP */
 .problem{
   text-align:center;
-  font-size:1.4rem;
+  font-size:1.25rem;
   color:var(--muted);
+  max-width:800px;
+  margin:auto;
 }
-
 /* TESTIMONIALS */
 .testimonial{
   background:var(--panel);
-  padding:36px;
+  padding:28px;
   border-radius:20px;
   border:1px solid #222;
 }
 
-.stars{
-  color:var(--accent);
-  margin-bottom:10px;
+.testimonial strong{
+  display:block;
+  margin-top:12px;
 }
 
+.stars{
+  color:var(--accent);
+  margin-bottom:8px;
+}
 /* CTA BOX */
 .cta-box{
   text-align:center;
   background:linear-gradient(135deg,#111,#1a1a1a);
-  padding:120px 40px;
+  padding:80px 40px;
   border-radius:30px;
   border:1px solid #222;
+}
+
+.cta-box h2{
+  margin-bottom:20px;
+}
+
+.cta-box p{
+  margin-bottom:30px;
 }
 
 /* FOOTER */
@@ -235,10 +255,10 @@ footer{
   </div>
 </header>
 
-<section>
+<section style="padding:40px 40px;">
   <p class="problem">
     Most business websites look good — but don’t generate leads.
-    That’s the problem we solve.
+    That's the problem we solve.
   </p>
 </section>
 
